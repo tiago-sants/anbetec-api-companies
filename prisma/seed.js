@@ -125,6 +125,17 @@ async function seed() {
 			},
 		],
 	})
+
+	await prisma.user.create({
+		data: {
+			name: "Administrador",
+			email: "admin@contato.com",
+			password: "$2a$08$ghB1qFvfH4tpDCMKkYy6BuS4Ee5aPN0FtAW1YgAhD6zEthbG9oCwG",
+			cpf: "12345678900",
+			phone: "(414) 249-2199",
+			companyId: 1
+		}
+	})
 }
 
 seed().then(() => {
